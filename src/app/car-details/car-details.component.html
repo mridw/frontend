@@ -1,0 +1,48 @@
+<!-- <navbar></navbar>
+
+<div class="max-w-4xl mx-auto p-6">
+    <div class="flex justify-center mb-6">
+      <img [src]="" alt="Image" class="w-full max-w-xl rounded-lg shadow-lg" />
+    </div>
+  
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-4"><h1>
+  
+    <p class="text-lg text-gray-600 text-center mb-6"></p>
+    <p class="text-lg text-gray-600 text-center mb-6"></p>
+  
+    <div class="flex justify-center">
+      <button routerLink="/dashboard"
+        class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-200">
+        Go Back
+      </button>
+    </div> -->
+    <navbar></navbar>
+
+<div *ngIf="car; else loading">
+  <div class="max-w-4xl mx-auto p-6">
+    <div class="flex justify-center mb-6">
+      <img [src]="car.image" alt="Car Image" class="w-full max-w-xl rounded-lg shadow-lg" />
+    </div>
+  
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-4">{{ car.title }}</h1>
+  
+    <p class="text-lg text-gray-600 text-center mb-6">{{ car.description }}</p>
+    <p class="text-lg text-gray-600 text-center mb-6">{{ car.tag }}</p>
+  
+    <div class="flex justify-center">
+      <button routerLink="/dashboard"
+        class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-200">
+        Go Back
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Loading Indicator -->
+<ng-template #loading>
+  <div class="flex justify-center">
+    <p class="text-lg text-gray-600">Loading car details...</p>
+  </div>
+</ng-template>
+
+    
